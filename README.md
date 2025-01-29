@@ -9,4 +9,8 @@ soubor "projekt_4_Veronika_koudelkova.sql" obsahuje sadu SQL dotazů generujíc�
 5. Otázka č. 1: "Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?"
 6. Odpověď: Ve všech odvětvích v letech 2001 až 2021 platy rostly, nicméně v každém odvětví, kromě C a Q, se našel alespoň jeden rok, ve kterém byla průměrná mzda nižší, než v předchozím roce.
 
-7. Otázka č. 2: ""
+7. Otázka č. 2: "Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd?"
+8. Odpověď: Množství kilogramů chleba / litrů mléka, které je možné si koupit z průměrného ročního platu každého odvětví je uvedeno ve sloupci "unit_per_payroll".
+            V tabulce je uveden první rok 2006 a poslední rok 2018 srovnatelného období.
+
+   Otázka č. 3: ""
