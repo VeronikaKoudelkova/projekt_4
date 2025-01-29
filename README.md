@@ -17,4 +17,6 @@ Odpověď: Nejpomaleji zdražuje Cukr krystalový, kumulativní nárůst u něj 
          Pokud bych se zaměřila na potravinu, která v průběhu let zdražila nejméně, tak nejpomaleji zdražují banány, neboť jejich kumulativní nárůst ceny mezi roky 2006 a 2018 činil 9.72 %.
          Jakostní víno bíle jsem neposuzovala, neboť jsou v tabulce czechia_price uvedena pouze data pro rok 2015 az 2018.
 
-Otázka č. 4: ""
+Otázka č. 4: "Existuje rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší než růst mezd (větší než 10 %)?"
+Odpověď: Byla porovnávána průměrná cena všch potravin dohromady a průměrný plat ze všech odvětví pro každý rok v intervalu 2007 az 2018.
+         Z výsledků vyplývá, že rozdíl v žádném roce nedosáhl hodnoty 10 %.
