@@ -20,3 +20,12 @@ Odpověď: Nejpomaleji zdražuje Cukr krystalový, kumulativní nárůst u něj 
 Otázka č. 4: "Existuje rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší než růst mezd (větší než 10 %)?"
 Odpověď: Byla porovnávána průměrná cena všch potravin dohromady a průměrný plat ze všech odvětví pro každý rok v intervalu 2007 az 2018.
          Z výsledků vyplývá, že rozdíl v žádném roce nedosáhl hodnoty 10 %.
+
+Otázka č. 5: "Má výška HDP vliv na změny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste výrazněji v jednom roce, projeví se to na cenách potravin či mzdách ve stejném nebo následujícím roce výraznějším růstem?"
+Odpověď: Z dat zahrnujících meziroční procentuální rozdíl cen potravin a HDP byl v excelu zkonstruován graf, který zobrazuje výraznou závislost změn ceny potravin na změnách HDP.
+         K nejvýraznějšímu poklesu HDP došlo v roce 2009, z dat je viditelný pokles ceny potravin ještě v tomtéž roce a u některých potravin i v roce následujícím mezi roky 2010 a 2012 docházelo ke snižování HDP, 
+         trend v cenách potravin byl však opačný, docházelo k postupnému zdražování.
+         Pokud jde o průměrné mzdy v každém odvětví, rok 2009 s poklesem HDP o -4,66 % vedl u téměř všech odvětví k poklesu platu či jen k jejich velmi mírnému nárůstu oproti roku 2008.
+         mezi roky 2010 a 2012 docházelo ke snižování HDP, což se v roce 2013 pravděpodobně odrazilo v platech, kdy byl pokles mezd či jen jejich nepatrný nárůst zaznamenán v každém odvětví
+         od roku 2013 mzdy v každém odvětví s mírnými výkyvy rostou.
+         Nicméně korelace mezi vývojem cen potravin či mezd a trendem HDP nemusí být nutně podmíněna příčinným vztahem!
