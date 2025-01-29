@@ -13,4 +13,7 @@ soubor "projekt_4_Veronika_koudelkova.sql" obsahuje sadu SQL dotazů generujíc�
 8. Odpověď: Množství kilogramů chleba / litrů mléka, které je možné si koupit z průměrného ročního platu každého odvětví je uvedeno ve sloupci "unit_per_payroll".
             V tabulce je uveden první rok 2006 a poslední rok 2018 srovnatelného období.
 
-   Otázka č. 3: ""
+   Otázka č. 3: "Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)?"
+   Odpověď: Nejpomaleji zdražuje Cukr krystalový, kumulativní nárůst u něj v roce 2018 činí -23,3 %, tzn. že oproti roku 2006 cukr výrazně zlevnil.
+            Pokud bych se zaměřila na potravinu, která v průběhu let zdražila nejméně, tak nejpomaleji zdražují banány, neboť jejich kumulativní nárůst ceny mezi roky 2006 a 2018 činil 9.72 %.
+            Jakostní víno bíle jsem neposuzovala, neboť jsou v tabulce czechia_price uvedena pouze data pro rok 2015 az 2018.
