@@ -8,8 +8,8 @@ CREATE OR REPLACE TABLE t_milk_and_bread
 			price_name,
 			price_year,
 			industry_branch_code,
-			AVG(payroll_value) OVER (PARTITION BY industry_branch_code, payroll_year) AS avg_payroll_per_year,
-			AVG(price_value_CZK) OVER (PARTITION BY price_category_code, price_year) AS avg_price_of_food_per_year,
+			AVG(payroll_value) OVER (PARTITION BY industry_branch_code) AS avg_payroll_per_year,
+			AVG(price_value_CZK) OVER (PARTITION BY price_category_code) AS avg_price_of_food_per_year,
 			price_unit
 		FROM t_Veronika_Koudelkova_project_SQL_primary_final
 	WHERE price_category_code = 114201 OR price_category_code = 111301
