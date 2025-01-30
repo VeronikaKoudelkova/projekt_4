@@ -27,7 +27,7 @@ CREATE OR REPLACE TABLE t_rise_price_2
 	WITH base AS (
 			SELECT DISTINCT 
 					average_price_per_year_CZK,
-					LAG(average_price_per_year_CZK) OVER (PARTITION BY category_code ORDER BY category_code, year) as avg_price_preceding_year_CZK,
+					LAG(average_price_per_year_CZK) OVER (PARTITION BY category_code ORDER BY category_code) as avg_price_preceding_year_CZK,
 					category_code,
 					name,
 					year,
