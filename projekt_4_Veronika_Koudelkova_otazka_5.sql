@@ -8,13 +8,13 @@ FROM economies
 WHERE country = 'Czech Republic' and year between 2006 and 2018
 ;
 
-CREATE OR REPLACE TABLE t_question_5_GDP_vs_payroll
-	WITH base_GDP AS (
+CREATE OR REPLACE TABLE t_question_5_gdp_vs_payroll
+	WITH base_gdp AS (
 						SELECT 
 								country,
 								year as economies_year,
 								GDP,
-								LAG(GDP) OVER (ORDER BY year) as GDP_preceding_year		
+								LAG(GDP) OVER (ORDER BY year) as gdp_preceding_year		
 							FROM economies
 						WHERE country = 'Czech Republic' AND year BETWEEN 2006 AND 2018
 						ORDER BY year 
@@ -29,30 +29,30 @@ CREATE OR REPLACE TABLE t_question_5_GDP_vs_payroll
 						ORDER BY industry_branch_code ASC, payroll_year ASC
 	)
 	SELECT 
-			bG.country,
-			bG.GDP,
-			bG.GDP_preceding_year,
-			ROUND(((bG.GDP * 100) / bG.GDP_preceding_year) - 100, 2) AS percentual_difference_in_GDP_between_years,
-			bG.economies_year,
+			bg.country,
+			bg.GDP,
+			bg.gdp_preceding_year,
+			ROUND(((bg.GDP * 100) / bg.GDP_preceding_year) - 100, 2) AS percentual_difference_in_gdp_between_years,
+			bg.economies_year,
 			bp.industry_branch_code,
 			bp.average_payroll_per_year,
 			LAG(bp.average_payroll_per_year) OVER (ORDER BY industry_branch_code, payroll_year) AS avg_payroll_preceding_year
-	FROM base_GDP bG
-	LEFT JOIN base_payroll bp ON bG.economies_year = bp.payroll_year
+	FROM base_gdp bg
+	LEFT JOIN base_payroll bp ON bg.economies_year = bp.payroll_year
 	WHERE economies_year BETWEEN 2006 AND 2018
 ;
 
-SELECT DISTINCT * FROM t_question_5_GDP_vs_payroll;
+SELECT DISTINCT * FROM t_question_5_gdp_vs_payroll;
 
 
 
-CREATE OR REPLACE TABLE t_question_5_GDP_vs_food
-	WITH base_GDP AS (
+CREATE OR REPLACE TABLE t_question_5_gdp_vs_food
+	WITH base_gdp AS (
 						SELECT 
 								country,
 								year AS economies_year,
 								GDP,
-								LAG(GDP) OVER (ORDER BY year) AS GDP_preceding_year		
+								LAG(GDP) OVER (ORDER BY year) AS gdp_preceding_year		
 							FROM economies
 						WHERE country = 'Czech Republic' AND year BETWEEN 2006 AND 2018
 						ORDER BY YEAR ASC
@@ -72,22 +72,22 @@ CREATE OR REPLACE TABLE t_question_5_GDP_vs_food
 						ORDER BY year, category_code
 	)
 	SELECT 
-			bG.country,
-			bG.GDP,
-			bG.GDP_preceding_year,
-			ROUND(((bG.GDP * 100) / bG.GDP_preceding_year) - 100, 2) AS percentual_difference_in_GDP_between_years,
-			bG.economies_year,
+			bg.country,
+			bg.GDP,
+			bg.GDP_preceding_year,
+			ROUND(((bg.GDP * 100) / bg.GDP_preceding_year) - 100, 2) AS percentual_difference_in_gdp_between_years,
+			bg.economies_year,
 			bf.category_code,
 			bf.food_name,
 			bf.year,
 			bf.average_price_per_year_CZK,
 			LAG(bf.average_price_per_year_CZK) OVER (ORDER BY food_name, year) AS average_price_preceding_year_CZK
-	FROM base_GDP bG
-	LEFT JOIN base_food bf ON bG.economies_year = bf.year
+	FROM base_gdp bg
+	LEFT JOIN base_food bf ON bg.economies_year = bf.year
 	WHERE economies_year BETWEEN 2006 AND 2018
 ;
 
-SELECT * FROM t_question_5_GDP_vs_food;
+SELECT * FROM t_question_5_gdp_vs_food;
 
 
 
@@ -110,7 +110,7 @@ WITH base_food AS (
 		food_name,
 		percentual_difference_in_GDP_between_years,
 		((average_price_per_year_CZK * 100) / average_price_preceding_year_CZK - 100) AS percentual_diff_in_food_between_years
-	FROM t_question_5_GDP_vs_food
+	FROM t_question_5_gdp_vs_food
 ) 
 SELECT 
 		*
@@ -128,7 +128,7 @@ WITH base_payroll AS (
 		industry_branch_code,
 		percentual_difference_in_GDP_between_years,
 		ROUND((average_payroll_per_year * 100) / avg_payroll_preceding_year - 100, 2) AS percentual_diff_of_payroll_between_years
-	FROM t_question_5_GDP_vs_payroll
+	FROM t_question_5_gdp_vs_payroll
 )
 SELECT *
 FROM base_payroll
